@@ -1,7 +1,7 @@
 MessageBooth
 =============
 
-A way to communicate with messages for events for remote and inperson attendees. 
+A way to communicate with messages for events for remote and attending participants. 
 
 Events are held often.   They often are inbetween celebratory and informative, rarely on either pole, with many smaller events occuring along this linear connection.   MessageBooth tries to address the particpatory aspects of large events, by providing a centralized collection of individual and group messages (audio, visual, and electronic) by participants of the event, those in atttendance and remotely.  
 
@@ -51,7 +51,7 @@ Using the remote interface(either at the even location or remotely), the user ca
 
 Photo Booth Strip (3 | 4 | 5 sequential pictures)
 ---
-The is a specific presentation of multiple pictures.   However, the sequential timing between photos taken is also important, as it adds to the 'candid' attribute of the photos.   
+The is a specific presentation of multiple pictures.   However, the sequential timing between photos taken is also important, as it adds to the 'candid' attribute of a traditional photobooth.   
 
 The user can choose the number of pictures (limiting between 3 and 6? inclusive) and the time intervals (likely not to exceed 8 secs or so), the camera takes the photos.   MessageBooth then auto formats them into a strip.   Manual adjustment can cocur on single photos, or the entire strip, sharing preferences are to be chosen, and then the user reviews and submits.
 
