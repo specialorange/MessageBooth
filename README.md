@@ -3,16 +3,20 @@ MessageBooth
 
 A way to communicate with messages for events for remote and attending participants. 
 
-Events are held often.   They often are inbetween celebratory and informative, rarely on either pole, with many smaller events occuring along this linear connection.   MessageBooth tries to address the particpatory aspects of large events, by providing a centralized collection of individual and group messages (audio, visual, and electronic) by participants of the event, those in atttendance and remotely.  
+Events are held often.   They often are inbetween celebratory and informative, rarely on either pole, with many smaller events occuring along this linear connection.   MessageBooth tries to address the participatory aspects of large events, by providing a centralized collection of individual and group messages (audio, visual, and electronic) by participants of the event, those in atttendance and remotely.  
 
 Other Potential Names
 -
 MemoRandom - each message would be a memo , normal spelling is memorandum | memorandom.com is newly registered
-BulletinBoard - Each meassage would be a bullet, the display is the board
+BulletinBoard - Each message would be a bullet, the display is the board
 
-Local Interface
+Local Interface - Capture
 -----
-A large screen display to organize and present the messages.   A device to provide locally created messages beyond particpants' personal devices will allow for a primary Message creator.   An HD camera, computer (hopefully thinclient or laptop), internet device or connection, and a large screen HDTV are required.
+A device to provide locally created messages beyond participants' personal devices will allow for a primary Message creator.   An HD camera, computer (hopefully thin-client or laptop), internet device or connection, and a large screen HDTV are required.
+
+Local Interface - Display
+-----
+A large screen display to organize and present the messages.  Log In to view private messages. All messages are present to experience.   The admin can de/select types, and review recently posted messages. 
 
 Remote Interface
 -----
@@ -24,6 +28,10 @@ Participants
  - Attendees
  - Host / Guests of Honor
  - Sponsor(s)
+
+Communication
+-----
+Communication of messages can go both ways.    The hosts would initially save asynchronous messages to be viewed by the rest of the participants at the event.   The guessts can then reply to the message to continue the conversation.
 
 Message Types
 -----

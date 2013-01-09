@@ -1,0 +1,186 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="2054" measuredH="1097" mockupW="1947" mockupH="1073">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="107" y="24" w="1947" h="1073" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="1688" y="375" w="351" h="707" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Webcam" x="531" y="294" w="926" h="618" measuredW="177" measuredH="146" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::Icon" x="1156" y="860" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ShareIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::TextInput" x="1219" y="866" w="-1" h="-1" measuredW="150" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>16777215</borderColor>
+        <text>Share%20%28privacy%29%20settings</text>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::Canvas" x="1688" y="39" w="351" h="315" measuredW="100" measuredH="70" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="62" controlTypeID="com.balsamiq.mockups::TextInput" x="1750" y="55" w="-1" h="-1" measuredW="227" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderColor>16777215</borderColor>
+        <text>A%20Message%20from%20the%20Guests%20of%20Honor</text>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="__group__" x="942" y="24" w="199" h="174" measuredW="199" measuredH="174" zOrder="3" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="187" h="48" measuredW="187" measuredH="48" zOrder="0" locked="false" isInGroup="80">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Icon" x="0" y="0" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <icon>TwitterIcon%7Clarge</icon>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="63" y="6" w="-1" h="-1" measuredW="124" measuredH="27" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <borderColor>16777215</borderColor>
+                <text>Twitter%20account%20info</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="0" y="126" w="169" h="48" measuredW="169" measuredH="48" zOrder="1" locked="false" isInGroup="80">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Icon" x="0" y="0" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="0" locked="false" isInGroup="1">
+              <controlProperties>
+                <icon>FacebookIcon%7Clarge</icon>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="67" y="11" w="-1" h="-1" measuredW="102" measuredH="27" zOrder="1" locked="false" isInGroup="1">
+              <controlProperties>
+                <borderColor>16777215</borderColor>
+                <text>FB%20account%20info</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="2" controlTypeID="__group__" x="0" y="63" w="199" h="48" measuredW="199" measuredH="48" zOrder="2" locked="false" isInGroup="80">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Icon" x="0" y="0" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="0" locked="false" isInGroup="2">
+              <controlProperties>
+                <icon>GoogleIcon%7Clarge</icon>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="67" y="11" w="-1" h="-1" measuredW="132" measuredH="27" zOrder="1" locked="false" isInGroup="2">
+              <controlProperties>
+                <borderColor>16777215</borderColor>
+                <text>Google+%20account%20info</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="81" controlTypeID="__group__" x="1261" y="37" w="370" h="63" measuredW="370" measuredH="63" zOrder="7" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="0" w="370" h="27" measuredW="370" measuredH="27" zOrder="0" locked="false" isInGroup="81">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="0" y="0" w="-1" h="-1" measuredW="49" measuredH="27" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>URL</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="63" y="0" w="307" h="-1" measuredW="101" measuredH="27" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <text>Input%20URL%20here</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="0" y="36" w="370" h="-1" measuredW="181" measuredH="27" zOrder="1" locked="false" isInGroup="81">
+          <controlProperties>
+            <text>Your%20Personal%20Message%20Here</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="90" controlTypeID="__group__" x="561" y="24" w="143" h="270" measuredW="143" measuredH="270" zOrder="10" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="222" w="112" h="48" measuredW="112" measuredH="48" zOrder="0" locked="false" isInGroup="90">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Icon" x="0" y="0" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <icon>MusicIcon%7Clarge</icon>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="63" y="11" w="49" h="-1" measuredW="49" measuredH="27" zOrder="1" locked="false" isInGroup="0">
+              <controlProperties>
+                <borderColor>16777215</borderColor>
+                <text>Sound</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="0" y="0" w="127" h="48" measuredW="127" measuredH="48" zOrder="1" locked="false" isInGroup="90">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Icon" x="0" y="0" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="0" locked="false" isInGroup="1">
+              <controlProperties>
+                <color>0</color>
+                <icon>CameraIcon%7Clarge</icon>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="63" y="11" w="64" h="-1" measuredW="64" measuredH="27" zOrder="1" locked="false" isInGroup="1">
+              <controlProperties>
+                <borderColor>16777215</borderColor>
+                <text>1%20Picture</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="2" controlTypeID="__group__" x="0" y="171" w="110" h="48" measuredW="110" measuredH="48" zOrder="2" locked="false" isInGroup="90">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Icon" x="0" y="0" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="0" locked="false" isInGroup="2">
+              <controlProperties>
+                <icon>VideoCameraIcon%7Clarge</icon>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="63" y="11" w="47" h="-1" measuredW="47" measuredH="27" zOrder="1" locked="false" isInGroup="2">
+              <controlProperties>
+                <borderColor>16777215</borderColor>
+                <text>Video</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="3" controlTypeID="__group__" x="0" y="51" w="143" h="118" measuredW="143" measuredH="118" zOrder="3" locked="false" isInGroup="90">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="58" y="46" w="85" h="-1" measuredW="85" measuredH="27" zOrder="0" locked="false" isInGroup="3">
+              <controlProperties>
+                <borderColor>16777215</borderColor>
+                <text>Photo%20Booth</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="__group__" x="0" y="0" w="43" h="118" measuredW="43" measuredH="118" zOrder="1" locked="false" isInGroup="3">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="43" h="118" measuredW="480" measuredH="2628" zOrder="0" locked="false" isInGroup="1">
+                  <controlProperties>
+                    <filter>true</filter>
+                    <src>./assets/film.png</src>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="91" controlTypeID="__group__" x="1318" y="947" w="154" h="135" measuredW="154" measuredH="135" zOrder="6" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::RadioButton" x="0" y="0" w="-1" h="-1" measuredW="54" measuredH="22" zOrder="0" locked="false" isInGroup="91">
+          <controlProperties>
+            <text>Public</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::RadioButton" x="0" y="22" w="-1" h="-1" measuredW="64" measuredH="22" zOrder="1" locked="false" isInGroup="91">
+          <controlProperties>
+            <text>Private</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="28" y="51" w="-1" h="-1" measuredW="126" measuredH="84" zOrder="2" locked="false" isInGroup="91">
+          <controlProperties>
+            <text>-%5Bx%5D%20Guests%20of%20Honor-%0A-%5B%20%5D%20Remote-%0A-%5B%20%5D%20Attendees-%0A-%5B%20%5D%20Sponsors-</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
