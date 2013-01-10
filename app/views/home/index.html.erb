@@ -1,1 +1,18 @@
-<h1>Finally, a Home Page!</h1>
+<div id="main" role="main">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="grey span3">
+        <%= render 'layouts/left' %>
+      </div>
+
+      <div class="grey span7">
+        <%= render 'layouts/messages' %>
+        <h1>Home Page!</h1>
+      </div>
+      
+      <div class="grey span2">
+        <%= render 'layouts/right' %>
+      </div>
+    </div> <!-- end row -->
+  </div> <!--! end of .container-fluid -->
+</div> <!--! end of #main -->

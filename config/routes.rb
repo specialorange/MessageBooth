@@ -1,35 +1,24 @@
 MessageBooth::Application.routes.draw do
 
-
+  # Display
+  match "display" => 'display#index'
   get "display/index"
-
   get "display/show"
-
   get "display/new"
-
   get "display/create"
-
   get "display/edit"
-
   get "display/update"
-
   get "display/destroy"
 
+  # Capture
+  match "capture" => 'capture#index'
   get "capture/index"
-
   get "capture/show"
-
   get "capture/new"
-
   get "capture/create"
-
   get "capture/edit"
-
   get "capture/update"
-
   get "capture/destroy"
-
-  # get "home/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -9,6 +9,7 @@
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
+
   <body>
     <div id="wrap">
       <header class="navbar navbar-inverse navbar-fixed-top">
@@ -18,29 +19,14 @@
           </div>
         </nav>
       </header>
-      
-      <div id="main" role="main">
-        <div class="container-fluid">
-          <div class="row-fluid">
-            <div class="grey span3">
-              <%= render 'layouts/left' %>
-            </div>
-            <div class="grey span7">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
-            <div class="grey span2">
-              <%= render 'layouts/right' %>
-            </div>
-          </div> <!-- end row -->
-        </div> <!--! end of .container-fluid -->
-      </div> <!--! end of #main -->
-    </div> <!-- end of wrap -->
 
-    <footer class="footer">
-      <div class="container-fluid">
-        <%= render 'layouts/footer' %>
-      </div>
-    </footer>
+      <%= yield %>
+
+      <footer class="footer">
+        <div class="container-fluid">
+          <%= render 'layouts/footer' %>
+        </div>
+      </footer>
+    </div> <!-- end of wrap -->
   </body>
 </html>
