@@ -1,6 +1,20 @@
 MessageBooth::Application.routes.draw do
 
 
+  get "capture/index"
+
+  get "capture/show"
+
+  get "capture/new"
+
+  get "capture/create"
+
+  get "capture/edit"
+
+  get "capture/update"
+
+  get "capture/destroy"
+
   # get "home/index"
 
   # The priority is based upon order of creation:
