@@ -1,13 +1,29 @@
 <div class="nav pull-left">
   <%= link_to "MessageBooth", root_path, :class => 'brand' %>
-</div>0
+</div>
+
+<div class="nav">
+  <% if user_signed_in? %>
+    <ul>
+      <li class="btn">
+        <%= current_user %>
+      </li>
+    </ul>  
+  <% else %>
+    <ul>
+      <li id="login" class="btn btn-inverse">
+        <%= link_to 'Login', new_user_session_path %>
+      </li>
+    </ul>    
+  <% end %>
+</div>
 
 <div class="nav pull-right">
   <ul>
-    <li class="btn">
+    <li class="btn btn-inverse">
       <%= link_to 'Capture', capture_path %>
     </li>
-    <li class="btn">
+    <li class="btn btn-inverse">
       <%= link_to 'Display', display_path %>
     </li>
   </ul>

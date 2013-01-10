@@ -17,3 +17,6 @@
 # ignore Sublime Text2
 *.sublime-*
 /*.sublime-*
+
+# Ignore secret_toke
+secret_token.rb

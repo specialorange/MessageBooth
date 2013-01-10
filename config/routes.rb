@@ -1,5 +1,7 @@
 MessageBooth::Application.routes.draw do
 
+  devise_for :users
+
   # Display
   match "display" => 'display#index'
   get "display/index"
