@@ -27,6 +27,7 @@ gem 'bootstrap-sass', '~> 2.2.2.0'
 gem 'simple_form'
 gem "better_errors", ">= 0.2.0", :group => :development
 gem 'devise'
+gem 'paperclip'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
