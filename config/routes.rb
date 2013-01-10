@@ -1,6 +1,20 @@
 MessageBooth::Application.routes.draw do
 
 
+  get "display/index"
+
+  get "display/show"
+
+  get "display/new"
+
+  get "display/create"
+
+  get "display/edit"
+
+  get "display/update"
+
+  get "display/destroy"
+
   get "capture/index"
 
   get "capture/show"
