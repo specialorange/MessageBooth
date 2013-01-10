@@ -1,6 +1,13 @@
 MessageBooth::Application.routes.draw do
 
-  resources :photos
+  # resources :photos
+
+  # Resources
+  resources :photos, :only => [:index, :show, :new, :create] do
+    post 'upload', :on => :collection
+  end
+
+
 
   devise_for :users
 

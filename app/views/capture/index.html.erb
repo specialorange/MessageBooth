@@ -7,7 +7,37 @@
 
       <div class="grey span7">
         <%= render 'layouts/messages' %>
-        <h1>Capture</h1>
+
+        <div>
+          Other Types of files
+        </div>
+
+        <div id="webcam">
+        </div>
+        
+        <input type="button" value="Take picture" onclick="webcam.snap();" />
+        
+        <script type="text/javascript">
+          webcam.set_swf_url('/webcam.swf');
+          webcam.set_api_url('<%= upload_photos_path %>');
+          webcam.set_quality(90);
+          webcam.set_shutter_sound(true, '/shutter.mp3');
+          webcam.set_hook('onLoad', 'onload_complete');
+          webcam.set_hook('onComplete', 'upload_complete');
+          $('#webcam').html(webcam.get_html(640, 480));
+        </script>
+
+        <%= form_for Photo.new, :html => {:style => "display: none;"} do |f| %>
+            <p>
+              <%= f.label :description %><br/>
+              <%= f.text_field :description %>
+            </p>
+            <p>
+              <%= f.submit "Save the photo" %>
+              or <%= link_to "Take another", new_photo_path %>
+            </p>
+        <% end %>
+
       </div>
       <div class="grey span2">
         <%= render 'layouts/right' %>
