@@ -1,0 +1,153 @@
+So I am not trying to add to the plethora of solutions that are out there for trying to get these to play well together, but I have tried a lot of them, well over 40 different solutions and orders, so if you wouldn't mind, I would appreciate the help trying to get this working, as I am trying to get a webcam on a rails tutorial ([here][1] and [here][2]).
+
+   Both my version and the forked version have a working webcam, and they both save the file to the file/folder, but both fail to save the file/path to the database during the transaction, and give the same error(s).    I used to have the error with paperclip not accessing the X11 code libraries, but I got those working with symbolic links ($ `ln -s WhereItWasLocated WhereIWasWantingAReference`), but now I cant get past this, and been on this for several days.
+
+I have received many errors, and worked through them slowly, but am stuck on this one, when I start my server locally (which is currently in development mode):
+
+    /Users/me/.rvm/gems/ruby-1.9.3-p362/gems/activesupport-3.2.8/lib/active_support/dependencies.rb:251:in `require': dlopen(/Users/me/.rvm/gems/ruby-1.9.3-p362/gems/rmagick-2.13.1/lib/RMagick2.bundle, 9): Library not loaded: /usr/local/lib/libltdl.7.dylib (LoadError)
+      Referenced from: /usr/local/lib/libMagickCore-Q16.7.dylib
+      Reason: no suitable image found.  Did find:
+      /usr/local/lib/libltdl.7.dylib: mach-o, but wrong filetype
+      /usr/local/lib/libltdl.7.dylib: mach-o, but wrong filetype - /Users/me/.rvm/gems/ruby-1.9.3-p362/gems/rmagick-2.13.1/lib/RMagick2.bundle
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362/gems/activesupport-3.2.8/lib/active_support/dependencies.rb:251:in `block in require'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362/gems/activesupport-3.2.8/lib/active_support/dependencies.rb:236:in `load_dependency'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362/gems/activesupport-3.2.8/lib/active_support/dependencies.rb:251:in `require'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362/gems/rmagick-2.13.1/lib/rmagick.rb:11:in `<top (required)>'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362@global/gems/bundler-1.2.3/lib/bundler/runtime.rb:68:in `require'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362@global/gems/bundler-1.2.3/lib/bundler/runtime.rb:68:in `block (2 levels) in require'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362@global/gems/bundler-1.2.3/lib/bundler/runtime.rb:66:in `each'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362@global/gems/bundler-1.2.3/lib/bundler/runtime.rb:66:in `block in require'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362@global/gems/bundler-1.2.3/lib/bundler/runtime.rb:55:in `each'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362@global/gems/bundler-1.2.3/lib/bundler/runtime.rb:55:in `require'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362@global/gems/bundler-1.2.3/lib/bundler.rb:128:in `require'
+      from /Users/me/dev/MessageBooth/config/application.rb:7:in `<top (required)>'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362/gems/railties-3.2.8/lib/rails/commands.rb:53:in `require'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362/gems/railties-3.2.8/lib/rails/commands.rb:53:in `block in <top (required)>'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362/gems/railties-3.2.8/lib/rails/commands.rb:50:in `tap'
+      from /Users/me/.rvm/gems/ruby-1.9.3-p362/gems/railties-3.2.8/lib/rails/commands.rb:50:in `<top (required)>'
+      from script/rails:6:in `require'
+      from script/rails:6:in `<main>'
+
+Other relevant information:
+
+- OSX => 10.82 (12C3006), rMBP (purchased with Mountain Lion on it, not an upgrade), and all updates via `Software Update` are complete and up to date
+- Xcode => Version 4.5.2 (4G2008a)
+  - Command Line Tools installed
+- XQuartz => 2.7.4 (xorg-server 1.13.0)
+- X11 => located in `/opt/X11/` with a symbolic link `lrwxr-xr-x    1 root  wheel     8 Jan 12 03:17 X11 -> /opt/X11`
+- $ `which ruby` => `/Users/me/.rvm/rubies/ruby-1.9.3-p362/bin/ruby`
+- $ `ruby -v` => `ruby 1.9.3p362 (2012-12-25 revision 38607) [x86_64-darwin12.2.1]`
+- $ `brew -v` => `Homebrew 0.9.3`
+- $ `bundle show rmagick` => `/Users/special/.rvm/gems/ruby-1.9.3-p362/gems/rmagick-2.13.1`
+- $ `echo $PATH` => `/usr/local/bin:/Applications/Postgres.app/Contents/MacOS/bin:/Users/me/.rvm/gems/ruby-1.9.3-p362/bin:/Users/me/.rvm/gems/ruby-1.9.3-p362@global/bin:/Users/me/.rvm/rubies/ruby-1.9.3-p362/bin:/Users/me/.rvm/bin:/Users/me/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/usr/local/mysql/bin`
+  - note that the $PATh does have `/usr/local/bin` twice, but i prepended it so when I run $ `brew doctor` that I dont get the complain that it follows `/usr/bin`.  To my knowledge, it is ok to have it twice.
+- $ `brew update` => `Already up-to-date.`
+
+Maybe relevant:
+
+ $ `brew list -all` =>
+
+    drwxr-xr-x  38 me  admin   1292 Jan 12 14:07 .
+    drwxr-xr-x  28 me  admin    952 Jan 11 17:28 ..
+    -rw-r--r--@  1 me  admin  12292 Jan 11 21:09 .DS_Store
+    drwxr-xr-x   3 me  admin    102 Oct 22 22:44 autojump
+    drwxr-xr-x   3 me  admin    102 Oct 22 22:32 bash-completion
+    drwxr-xr-x   3 me  admin    102 Jan 11 16:47 fontconfig
+    drwxr-xr-x   3 me  admin    102 Jan 12 03:42 freetype
+    drwxr-xr-x   3 me  admin    102 Jan 12 02:23 gcc
+    drwxr-xr-x   3 me  admin    102 Jan 11 20:16 gettext
+    drwxr-xr-x   3 me  admin    102 Jan 11 21:09 ghostscript
+    drwxr-xr-x   3 me  admin    102 Oct 22 22:32 git
+    drwxr-xr-x   3 me  admin    102 Nov 19 02:56 git-ftp
+    drwxr-xr-x   3 me  admin    102 Jan 11 20:16 glib
+    drwxr-xr-x   3 me  admin    102 Jan 12 02:14 gmp
+    drwxr-xr-x   3 me  admin    102 Jan 12 14:02 graphicsmagick
+    drwxr-xr-x   3 me  admin    102 Jan 12 14:07 imagemagick
+    drwxr-xr-x   3 me  admin    102 Jan 11 20:18 intltool
+    drwxr-xr-x   3 me  admin    102 Jan  2 17:25 ios-sim
+    drwxr-xr-x   3 me  admin    102 Jan 11 17:31 jbig2dec
+    drwxr-xr-x   3 me  admin    102 Jan 11 16:47 jpeg
+    drwxr-xr-x   3 me  admin    102 Jan 11 20:59 libexif
+    drwxr-xr-x   3 me  admin    102 Jan 11 20:16 libffi
+    drwxr-xr-x   3 me  admin    102 Jan 11 20:18 libgsf
+    drwxr-xr-x   3 me  admin    102 Jan 12 02:17 libmpc
+    drwxr-xr-x   3 me  admin    102 Dec  9 20:45 libpng
+    drwxr-xr-x   3 me  admin    102 Jan 11 21:17 libtiff
+    drwxr-xr-x   3 me  admin    102 Jan 11 17:50 libtool
+    drwxr-xr-x   3 me  admin    102 Jan 11 20:57 little-cms
+    drwxr-xr-x   3 me  admin    102 Jan 11 17:31 little-cms2
+    drwxr-xr-x   3 me  admin    102 Jan 12 02:16 mpfr
+    drwxr-xr-x   3 me  admin    102 Oct 23 09:35 node
+    drwxr-xr-x   3 me  admin    102 Oct 23 23:18 ossp-uuid
+    drwxr-xr-x   3 me  admin    102 Dec  9 20:45 pkg-config
+    drwxr-xr-x   3 me  admin    102 Jan  8 00:49 postgresql
+    drwxr-xr-x   3 me  admin    102 Oct 23 23:18 readline
+    drwxr-xr-x   3 me  admin    102 Nov 11 02:24 wget
+    drwxr-xr-x   3 me  admin    102 Jan 11 20:15 xz
+    drwxr-xr-x   3 me  admin    102 Jan 11 20:13 zlib
+
+ $ `bundle` (scoped within the current project) =>
+
+    Using rake (10.0.3) 
+    Using i18n (0.6.1) 
+    Using multi_json (1.5.0) 
+    Using activesupport (3.2.8) 
+    Using builder (3.0.4) 
+    Using activemodel (3.2.8) 
+    Using erubis (2.7.0) 
+    Using journey (1.0.4) 
+    Using rack (1.4.3) 
+    Using rack-cache (1.2) 
+    Using rack-test (0.6.2) 
+    Using hike (1.2.1) 
+    Using tilt (1.3.3) 
+    Using sprockets (2.1.3) 
+    Using actionpack (3.2.8) 
+    Using mime-types (1.19) 
+    Using polyglot (0.3.3) 
+    Using treetop (1.4.12) 
+    Using mail (2.4.4) 
+    Using actionmailer (3.2.8) 
+    Using arel (3.0.2) 
+    Using tzinfo (0.3.35) 
+    Using activerecord (3.2.8) 
+    Using activeresource (3.2.8) 
+    Using bcrypt-ruby (3.0.1) 
+    Using coderay (1.0.8) 
+    Using better_errors (0.3.2) 
+    Using binding_of_caller (0.6.8) 
+    Using sass (3.2.5) 
+    Using bootstrap-sass (2.2.2.0) 
+    Using cocaine (0.2.0) 
+    Using coffee-script-source (1.4.0) 
+    Using execjs (1.4.0) 
+    Using coffee-script (2.2.0) 
+    Using rack-ssl (1.3.2) 
+    Using json (1.7.6) 
+    Using rdoc (3.12) 
+    Using thor (0.16.0) 
+    Using railties (3.2.8) 
+    Using coffee-rails (3.2.2) 
+    Using orm_adapter (0.4.0) 
+    Using warden (1.2.1) 
+    Using devise (2.1.2) 
+    Using jquery-rails (2.1.4) 
+    Using paperclip (2.4.1) 
+    Using bundler (1.2.3) 
+    Using rails (3.2.8) 
+    Using rmagick (2.13.1) 
+    Using sass-rails (3.2.5) 
+    Using simple_form (2.0.4) 
+    Using sqlite3 (1.3.6) 
+    Using uglifier (1.3.0) 
+
+- ask for anything else in the comments, and I will post
+- things I've tried, and will try again if you think it will work:
+  - Reinstall brew formulas and gems, or install from command line and bundle
+  - Reinstall Ruby
+  - try a whole bunch of symbolic links
+  - manually add/delete files
+  - force link brew formulas
+
+  [1]: https://github.com/lassebunk/webcam_app
+  [2]: http://lassebunk.dk/2011/02/19/paperclip-jpegcam-webcam-rails3/

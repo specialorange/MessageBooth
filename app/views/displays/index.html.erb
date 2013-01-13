@@ -7,7 +7,16 @@
 
       <div class="grey span7">
         <%= render 'layouts/messages' %>
-        <h1>Display</h1>
+        <h1>Display All Photos</h1>
+
+          <ul>
+            <% @photos.each do |photo| %>
+            <li style="float: left;">
+              <%= link_to image_tag(photo.image.url(:thumb)), photo %>
+            </li>
+            <% end %>
+          </ul>
+
       </div>
       <div class="grey span2">
         <%= render 'layouts/right' %>

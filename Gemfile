@@ -28,6 +28,10 @@ gem 'simple_form'
 gem "better_errors", ">= 0.2.0", :group => :development
 gem 'devise'
 gem 'paperclip'
+gem 'rmagick'
+gem 'binding_of_caller'
+gem 'syntax'
+gem 'color_routes'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

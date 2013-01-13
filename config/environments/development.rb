@@ -37,4 +37,11 @@ MessageBooth::Application.configure do
 
   # Chris.Devise
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  # Chris.Paperclip
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+  # Chris.Logging to the server console
+  config.logger = Logger.new(STDOUT)
+  Rails.logger = Logger.new(STDOUT)
+  # Rails.logger = Log4r::Logger.new("Application Log")
+
 end
