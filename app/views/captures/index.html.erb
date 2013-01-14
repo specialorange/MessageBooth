@@ -5,14 +5,49 @@
         <%= render 'layouts/left' %>
       </div>
 
-      <div class="grey span7">
+      <div class="grey span7" id="capture-content">
         <%= render 'layouts/messages' %>
 
-        <div>
-          Other Types of files
+        <div class="row media">
+          <table>
+            <tr>
+              <td class="media-type">Picture</td>
+              <td class="media-type">Photo-Booth</td>
+              <td class="media-type">Video</td>
+              <td class="media-type">Audio</td>
+              <td class="media-type">Letter</td>
+              <td class="media-type">URL</td>
+              <td class="media-type">Attachment</td>
+              <td class="media-type">RSS</td>
+              <td class="media-type">Image</td>
+              <td class="media-type">FB</td>
+              <td class="media-type">Twitter</td>
+              <td class="media-type">G+</td>
+            </tr>
+            <tr>
+              <td class="media-type"><i class="icon-camera-retro icon-large"></i></td>
+              <td class="media-type"><i class="icon-film icon-large"></i></td>
+              <td class="media-type"><i class="icon-facetime-video icon-large"></i></td>
+              <td class="media-type"><i class="icon-music icon-large"></i></td>
+              <td class="media-type"><i class="icon-edit icon-large"></i></td>
+              <td class="media-type"><i class="icon-link icon-large"></i></td>
+              <td class="media-type"><i class="icon-paper-clip icon-large"></i></td>
+              <td class="media-type"><i class="icon-rss icon-large"></i></td>
+              <td class="media-type"><i class="icon-picture icon-large"></i></td>
+              <td class="media-type"><i class="icon-facebook-sign icon-large"></i></td>
+              <td class="media-type"><i class="icon-twitter-sign icon-large"></i></td>
+              <td class="media-type"><i class="icon-google-plus-sign icon-large"></i></td>
+            </tr>
+          </table>
         </div>
 
-        <div id="webcam">
+        <div class="row">
+          <ul>
+
+          </ul>
+        </div>
+
+        <div class="row" id="webcam">
         </div>
         
         <input type="button" value="Take picture" onclick="webcam.snap();" />
@@ -50,12 +85,15 @@
           // webcam.set_api_url( 'http://yourserver.com/yourscript.php?filename=' + escape(filename) );
 
           webcam.set_quality(90);
+          webcam.set_stealth( true );
           webcam.set_shutter_sound(true, '/shutter.mp3');
           webcam.set_hook('onLoad', 'onload_complete');
           webcam.set_hook('onComplete', 'upload_complete');
           var width = $(window).width();
-          // $('#webcam').html(webcam.get_html(640*1.5, 480*1.5));
-          $('#webcam').html(webcam.get_html((width*.5), ((width*.5)*3/4)));
+          width = $('#webcam').width();
+          // $('#webcam').html(webcam.get_html(640, 480));
+          // $('#webcam').html(webcam.get_html((width*.5), ((width*.5)*3/4)));
+          $('#webcam').html(webcam.get_html((width), ((width)*3/4)));
         </script>
 
         <%= form_for Photo.new, :html => {:style => "display: none;"} do |f| %>
@@ -76,9 +114,7 @@
         <div>
           <ul>
             <% @photos.each do |photo| %>
-            <li style="float: left;">
-              <%= link_to image_tag(photo.image.url(:thumb)), photo %>
-            </li>
+            <%= validate_image(photo.image.url(:thumb))%>
             <% end %>
           </ul>
         </div>

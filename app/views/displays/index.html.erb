@@ -11,9 +11,7 @@
 
           <ul>
             <% @photos.each do |photo| %>
-            <li style="float: left;">
-              <%= link_to image_tag(photo.image.url(:thumb)), photo %>
-            </li>
+            <%= validate_image(photo.image.url(:thumb))%>
             <% end %>
           </ul>
 

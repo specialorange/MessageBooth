@@ -5,10 +5,14 @@ class PhotosController < ApplicationController
     @photo.image = File.new(upload_path)
     @photo.save
 
-    redirect_to capture_url
+    redirect_to captures_url
   end
 
   def show
+    @photo = Photo.find(params[:id])
+  end
+
+  def edit
     @photo = Photo.find(params[:id])
   end
 
