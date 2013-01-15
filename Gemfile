@@ -33,6 +33,7 @@ gem 'binding_of_caller'
 gem 'syntax'
 gem 'color_routes'
 gem 'font-awesome-rails'
+gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
