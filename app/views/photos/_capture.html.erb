@@ -1,64 +1,66 @@
-        <div class="row" id="webcam">
-        </div>
-        
-        <input type="button" value="Take picture" onclick="webcam.snap();" />
+<% content_for :messageContainer do %>
+  <div id="webcam">
+  </div>
+
+  <input type="button" value="Take picture" onclick="webcam.snap();" />
 
 
-        <script type="text/javascript">
-          // var now = new Date();
-          // var filename = now.toISOString();
-          // $('#calculatedFileName').val(filename);
+  <script type="text/javascript">
+    // var now = new Date();
+    // var filename = now.toISOString();
+    // $('#calculatedFileName').val(filename);
 
-          function onload_complete(msg) {
-              // fetch the CSRF meta tag data
-              var csrf_param = $('meta[name=csrf-param]').attr('content');
-              var csrf_token = $('meta[name=csrf-token]').attr('content');
+    function onload_complete(msg) {
+        // fetch the CSRF meta tag data
+        var csrf_param = $('meta[name=csrf-param]').attr('content');
+        var csrf_token = $('meta[name=csrf-token]').attr('content');
 
-              // reset the api URL appending the auth token parameter
-              webcam.set_api_url('<%= upload_photos_path %>' + '?' + csrf_param + "=" + encodeURI(encodeURI(csrf_token)));
-          }
+        // reset the api URL appending the auth token parameter
+        webcam.set_api_url('<%= upload_photos_path %>' + '?' + csrf_param + "=" + encodeURI(encodeURI(csrf_token)));
+    }
 
-          function upload_complete(msg) {
-              if (msg == 'ok') {
-                  $('#new_photo').show();
-                  $('#photo_description').focus();
-              } else {
-                  alert('An error occured');
-                  webcam.reset();
-              }
-          }
+    function upload_complete(msg) {
+        if (msg == 'ok') {
+            $('#new_photo').show();
+            $('#photo_description').focus();
+        } else {
+            alert('An error occured');
+            webcam.reset();
+        }
+    }
 
-          webcam.set_swf_url('/webcam.swf');
-          webcam.set_api_url('<%= upload_photos_path %>');
-          // Update filename
-          // This is something you can do yourself, outside of JPEGCam. Simply provide a text field on your page, and when the button is clicked, grab the value from the text field and add it to your server URL using webcam.set_api_url(). Just add the filename as a query string parameter. For example:
-          // var filename = document.getElementById('ID_OF_TEXT_FIELD').value;
-          // webcam.set_api_url( 'http://yourserver.com/yourscript.php?filename=' + escape(filename) );
+    webcam.set_swf_url('/webcam.swf');
+    webcam.set_api_url('<%= upload_photos_path %>');
+    // Update filename
+    // This is something you can do yourself, outside of JPEGCam. Simply provide a text field on your page, and when the button is clicked, grab the value from the text field and add it to your server URL using webcam.set_api_url(). Just add the filename as a query string parameter. For example:
+    // var filename = document.getElementById('ID_OF_TEXT_FIELD').value;
+    // webcam.set_api_url( 'http://yourserver.com/yourscript.php?filename=' + escape(filename) );
 
-          webcam.set_quality(90);
-          webcam.set_stealth( true );
-          webcam.set_shutter_sound(true, '/shutter.mp3');
-          webcam.set_hook('onLoad', 'onload_complete');
-          webcam.set_hook('onComplete', 'upload_complete');
-          var width = $(window).width();
-          width = $('#webcam').width();
-          // $('#webcam').html(webcam.get_html(640, 480));
-          // $('#webcam').html(webcam.get_html((width*.5), ((width*.5)*3/4)));
-          $('#webcam').html(webcam.get_html((width), ((width)*3/4)));
-        </script>
+    webcam.set_quality(90);
+    webcam.set_stealth( true );
+    webcam.set_shutter_sound(true, '/shutter.mp3');
+    webcam.set_hook('onLoad', 'onload_complete');
+    webcam.set_hook('onComplete', 'upload_complete');
+    var width = $(window).width();
+    width = $('#webcam').width();
+    // $('#webcam').html(webcam.get_html(640, 480));
+    // $('#webcam').html(webcam.get_html((width*.5), ((width*.5)*3/4)));
+    $('#webcam').html(webcam.get_html((width), ((width)*3/4)));
+  </script>
 
-        <%= form_for Photo.new, :html => {:style => "display: none;"} do |f| %>
-          <div class="grey span2">
-            <!-- <input type="hidden" name="fileName" id="calculatedFileName"> -->
-            <p>
-              <%= f.label :description %><br/>
-              <%= f.text_field :description %>
-            </p>
-          </div>
-          <div>
-            <p>
-              <%= f.submit "Save the photo" %>
-              or <%= link_to "Take another", new_photo_path %>
-            </p>
-          </div>
-        <% end %>
+  <%= form_for Photo.new, :html => {:style => "display: none;"} do |f| %>
+    <div class="grey span2">
+      <!-- <input type="hidden" name="fileName" id="calculatedFileName"> -->
+      <p>
+        <%= f.label :description %><br/>
+        <%= f.text_field :description %>
+      </p>
+    </div>
+    <div>
+      <p>
+        <%= f.submit "Save the photo" %>
+        or <%= link_to "Take another", new_photo_path %>
+      </p>
+    </div>
+  <% end %>
+<% end %>

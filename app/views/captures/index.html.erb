@@ -8,11 +8,16 @@
       <div class="grey span7" id="capture-content">
         <%= render 'layouts/messages' %>
 
-        <div class="row media">
+        <div class="row" id="media-buttons">
           <table>
             <tr>
-              <td class="media-type">Picture</td>
-              <td class="media-type">Photo-Booth</td>
+              <td colspan="5" class="media-type">Take here, or =></td>
+              <td colspan="4" class="media-type">Provide, then =></td>
+              <td colspan="3" class="media-type">Share</td>
+            </tr>
+            <tr>
+              <td class="media-type active">Picture</td>
+              <td class="media-type">PhotoBooth</td>
               <td class="media-type">Video</td>
               <td class="media-type">Audio</td>
               <td class="media-type">Letter</td>
@@ -25,35 +30,28 @@
               <td class="media-type">G+</td>
             </tr>
             <tr>
-              <td class="media-type"><i class="icon-camera-retro icon-large"></i></td>
-              <td class="media-type"><i class="icon-film icon-large"></i></td>
-              <td class="media-type"><i class="icon-facetime-video icon-large"></i></td>
-              <td class="media-type"><i class="icon-music icon-large"></i></td>
-              <td class="media-type"><i class="icon-edit icon-large"></i></td>
-              <td class="media-type"><i class="icon-link icon-large"></i></td>
-              <td class="media-type"><i class="icon-paper-clip icon-large"></i></td>
-              <td class="media-type"><i class="icon-rss icon-large"></i></td>
-              <td class="media-type"><i class="icon-picture icon-large"></i></td>
-              <td class="media-type"><i class="icon-facebook-sign icon-large"></i></td>
-              <td class="media-type"><i class="icon-twitter-sign icon-large"></i></td>
-              <td class="media-type"><i class="icon-google-plus-sign icon-large"></i></td>
+              <td class="media-type active"><%= link_to "", new_photo_path, :class => "btn btn-large icon-camera-retro icon-large active" %></td>
+              <td class="media-type"><%= link_to "", new_photo_booth_path, :class => "btn btn-large icon-film icon-large" %></td>
+              <td class="media-type"><%= link_to "", new_video_path, :class => "btn btn-large icon-facetime-video icon-large" %></td>
+              <td class="media-type"><%= link_to "", new_audio_path, :class => "btn btn-large icon-music icon-large" %></td>
+              <td class="media-type"><%= link_to "", new_letter_path, :class => "btn btn-large icon-edit icon-large" %></td>
+              <td class="media-type"><%= link_to "", new_url_path, :class => "btn btn-large icon-link icon-large" %></td>
+              <td class="media-type"><%= link_to "", new_attachment_path, :class => "btn btn-large icon-paper-clip icon-large" %></td>
+              <td class="media-type"><%= link_to "", new_rss_path, :class => "btn btn-large icon-rss icon-large" %></td>
+              <td class="media-type"><%= link_to "", new_image_url_path, :class => "btn btn-large icon-picture icon-large" %></td>
+              <td class="media-type"><%= link_to "", new_facebook_path, :class => "btn btn-large icon-facebook-sign icon-large" %></td>
+              <td class="media-type"><%= link_to "", new_twitter_path, :class => "btn btn-large icon-twitter-sign icon-large" %></td>
+              <td class="media-type"><%= link_to "", new_google_p_path, :class => "btn btn-large icon-google-plus-sign icon-large" %></td>
             </tr>
           </table>
         </div>
 
-        <div class="row">
-          <ul>
-
-          </ul>
+        <div data-pjax-container>
+          <div class="row" id="message-container">
+            <%= yield :messageContainer %>
+          </div>
         </div>
 
-        <div>
-          <ul>
-            <% @photos.each do |photo| %>
-            <%= validate_image(photo.image.url(:thumb))%>
-            <% end %>
-          </ul>
-        </div>
       </div>
 
       <div class="grey span2">

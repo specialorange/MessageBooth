@@ -1,0 +1,55 @@
+<div id="main" role="main">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="grey span3">
+        <%= render 'layouts/left' %>
+      </div>
+
+      <div class="grey span7" id="capture-content">
+        <%= render 'layouts/messages' %>
+
+        <div class="row" id="media-buttons">
+          <table>
+            <tr>
+              <td class="media-type">Picture</td>
+              <td class="media-type">PhotoBooth</td>
+              <td class="media-type">Video</td>
+              <td class="media-type">Audio</td>
+              <td class="media-type">Letter</td>
+              <td class="media-type active"><%= link_to "URL", new_url_path %></td>
+              <td class="media-type">Attachment</td>
+              <td class="media-type">RSS</td>
+              <td class="media-type">Image</td>
+              <td class="media-type">FB</td>
+              <td class="media-type">Twitter</td>
+              <td class="media-type">G+</td>
+            </tr>
+            <tr>
+              <td class="media-type"><i class="btn btn-large icon-camera-retro icon-large active"></i></td>
+              <td class="media-type"><i class="btn btn-large icon-film icon-large"></i></td>
+              <td class="media-type"><i class="btn btn-large icon-facetime-video icon-large"></i></td>
+              <td class="media-type"><i class="btn btn-large icon-music icon-large"></i></td>
+              <td class="media-type"><i class="btn btn-large icon-edit icon-large"></i></td>
+              <td class="media-type active"><i class="btn btn-large icon-link icon-large"></i></td>
+              <td class="media-type"><i class="btn btn-large icon-paper-clip icon-large"></i></td>
+              <td class="media-type"><i class="btn btn-large icon-rss icon-large"></i></td>
+              <td class="media-type"><i class="btn btn-large icon-picture icon-large"></i></td>
+              <td class="media-type"><i class="btn btn-large icon-facebook-sign icon-large"></i></td>
+              <td class="media-type"><i class="btn btn-large icon-twitter-sign icon-large"></i></td>
+              <td class="media-type"><i class="btn btn-large icon-google-plus-sign icon-large"></i></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="row" id="message-container">
+          <%= render :partial => "urls/capture", :locals => { :urls => @urls } %>
+        </div>
+
+      </div>
+
+      <div class="grey span2">
+        <%= render 'layouts/right' %>
+      </div>
+    </div> <!-- end row -->
+  </div> <!--! end of .container-fluid -->
+</div> <!--! end of #main -->

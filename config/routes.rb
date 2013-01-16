@@ -1,5 +1,40 @@
 MessageBooth::Application.routes.draw do
 
+  resources :google_ps
+
+
+  resources :twitters
+
+
+  resources :google_plus
+
+
+  resources :facebooks
+
+
+  resources :image_urls
+
+
+  resources :rsses
+
+
+  resources :attachments
+
+
+  resources :letters
+
+
+  resources :audios
+
+
+  resources :videos
+
+
+  resources :photo_booths
+
+
+  resources :urls
+
   devise_for :users
 
   resources :displays

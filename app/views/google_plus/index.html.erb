@@ -1,0 +1,21 @@
+<h1>Listing google_plus</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @google_plus.each do |google_plu| %>
+  <tr>
+    <td><%= link_to 'Show', google_plu %></td>
+    <td><%= link_to 'Edit', edit_google_plu_path(google_plu) %></td>
+    <td><%= link_to 'Destroy', google_plu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Google plu', new_google_plu_path %>

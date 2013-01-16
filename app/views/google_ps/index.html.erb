@@ -1,0 +1,21 @@
+<h1>Listing google_ps</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @google_ps.each do |google_p| %>
+  <tr>
+    <td><%= link_to 'Show', google_p %></td>
+    <td><%= link_to 'Edit', edit_google_p_path(google_p) %></td>
+    <td><%= link_to 'Destroy', google_p, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Google p', new_google_p_path %>

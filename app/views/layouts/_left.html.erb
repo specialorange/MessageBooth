@@ -8,9 +8,19 @@
 <% end %>
 
 <ul class="nav nav-list">
-  <li class="active"><a href="#">Home</a></li>
-  <li class="nav-header">Business</li>
-  <li class="nav-header">Data</li>
-  <li class="nav-header">Financial</li>
-  <li class="nav-header">Other</li>
-</ul>
+  <li class="active"><%= link_to "Recent", root_path %></li>
+  <li class="nav-header">Photo</li>
+    <div><%= @lastPhoto %></div>
+  <li class="nav-header">PhotoBooth</li>
+    <div><%= @lastPhotoBooth %></div>
+  <li class="nav-header">Video</li>
+    <div><%= @lastVideo %></div>
+  <li class="nav-header">Letter</li>
+    <div><%= @lastLetter %></div>
+  <li class="nav-header">URL</li>
+    <div><%= @lastURL %></div>
+  <li class="nav-header">RSS</li>
+    <div><%= @lastRSS %></div>
+  <li class="nav-header">Image</li>
+    <div><%= @lastImage %></div>
+  </ul>

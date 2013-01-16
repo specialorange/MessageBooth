@@ -1,0 +1,31 @@
+<h1>Listing photo_booths</h1>
+
+<table>
+  <tr>
+    <th>String</th>
+    <th>String</th>
+    <th>String</th>
+    <th>Integer</th>
+    <th>Datetime</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @photo_booths.each do |photo_booth| %>
+  <tr>
+    <td><%= photo_booth.string %></td>
+    <td><%= photo_booth.string %></td>
+    <td><%= photo_booth.string %></td>
+    <td><%= photo_booth.integer %></td>
+    <td><%= photo_booth.datetime %></td>
+    <td><%= link_to 'Show', photo_booth %></td>
+    <td><%= link_to 'Edit', edit_photo_booth_path(photo_booth) %></td>
+    <td><%= link_to 'Destroy', photo_booth, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Photo booth', new_photo_booth_path %>
