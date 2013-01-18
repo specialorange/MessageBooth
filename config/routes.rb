@@ -1,37 +1,34 @@
 MessageBooth::Application.routes.draw do
 
-  resources :google_ps
+  match 'captures/photos' => 'captures#photos'
+  match 'captures/photo_booths' => 'captures#photo_booths'
+  match 'captures/videos' => 'captures#videos'
+  match 'captures/audios' => 'captures#audios'
+  match 'captures/letters' => 'captures#letters'
+  match 'captures/urls' => 'captures#urls'
+  match 'captures/attachments' => 'captures#attachments'
+  match 'captures/rsses' => 'captures#rsses'
+  match 'captures/image_urls' => 'captures#image_urls'
 
+  resources :google_ps
 
   resources :twitters
 
-
-  resources :google_plus
-
-
   resources :facebooks
-
 
   resources :image_urls
 
-
   resources :rsses
-
 
   resources :attachments
 
-
   resources :letters
-
 
   resources :audios
 
-
   resources :videos
 
-
   resources :photo_booths
-
 
   resources :urls
 
@@ -44,9 +41,6 @@ MessageBooth::Application.routes.draw do
   resources :photos, :only => [:index, :show, :new, :create, :edit] do
     post 'upload', :on => :collection
   end
-
-  # resources :layouts
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

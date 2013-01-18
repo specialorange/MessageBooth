@@ -29,13 +29,13 @@
 }
 
 #media-buttons .media-type {
-  /*float: left;*/
-  width: 8%;
-  margin: 5px!important;
+  width: 7%;
   text-align: center;
 }
 
-.media-type {
+#media-buttons table tbody tr {
+  /*TODO get margin or padding working*/
+  height: 35px;
 }
 
 #media-buttons {
@@ -43,10 +43,10 @@
     padding: 8px!important;
 }
 
-#media-buttons table {
-    margin: 8px!important;
-    padding:  8px!important;
-}
+/*#media-buttons table {*/
+    /*margin: 8px!important;*/
+    /*padding:  8px!important;*/
+/*}*/
 
 #media-buttons  td.active {
   font-weight: bold;
@@ -54,4 +54,15 @@
 
 #message-container {
   padding: 15px;
+}
+
+.headering {
+color: white;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+background-color: #0088cc;
+}
+
+.social {
+  float: left;
+  list-style-type: none;
 }

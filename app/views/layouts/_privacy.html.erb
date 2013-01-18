@@ -1,0 +1,12 @@
+<p class="headering">Set Privacy</p>
+
+<% [ 'All', 'To Event Location', 'To Goh' ].each do |theme| %>
+  <%= radio_button_tag 'privacy', theme, @theme == theme %>
+  <%= label_tag "privacy_#{theme}", theme.humanize %>
+<% end %>
+<!-- 
+<ul class="nav nav-list">
+  <li class="nav-header">All</li>
+  <li class="nav-header">To Event Location</li>
+  <li class="nav-header">To GoH</li>
+</ul> -->

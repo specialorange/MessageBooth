@@ -1,12 +1,7 @@
 class CapturesController < ApplicationController
 
 
-
   def index
-
-    logger.debug "@photos"
-    logger.debug @photos
-
     @photos = Photo.all
     
     respond_to do |format|
@@ -15,7 +10,35 @@ class CapturesController < ApplicationController
     end
   end
 
-  # get photos
+  def photos
+    render 'index'
+  end
+  def photo_booths
+    render 'index'
+  end
+  def videos
+    render 'index'
+  end
+  def audios
+    render 'index'
+  end
+  def letters
+    render 'index'
+  end
+  def attachments
+    render 'index'
+  end
+  def urls
+    render 'index'
+  end
+  def rsses
+    render 'index'
+  end
+  def image_urls
+    render 'index'
+  end
+
+  # get captures
   def upload
     File.open(upload_path, 'wb') do |f|
       f.write request.raw_post
@@ -23,16 +46,9 @@ class CapturesController < ApplicationController
     render :text => "ok"
   end
 
-  private
 
-  def upload_path # is used in upload and create
-    file_name = session[:session_id].to_s + '.jpg'
-    File.join(Rails.root, 'public', 'uploads', file_name)
-  end
-
-
-  # GET /photos/1
-  # GET /photos/1.json
+  # GET /captures/1
+  # GET /captures/1.json
   def show
     @photo = Photo.find(params[:id])
 
@@ -42,8 +58,8 @@ class CapturesController < ApplicationController
     end
   end
 
-  # GET /photos/new
-  # GET /photos/new.json
+  # GET /captures/new
+  # GET /captures/new.json
   def new
     @photo = Photo.new
 
@@ -53,13 +69,13 @@ class CapturesController < ApplicationController
     end
   end
 
-  # GET /photos/1/edit
+  # GET /captures/1/edit
   def edit
     @photo = Photo.find(params[:id])
   end
 
-  # POST /photos
-  # POST /photos.json
+  # POST /captures
+  # POST /captures.json
   def create
     @photo = Photo.new(params[:photo])
     @photo.image = File.new(upload_path)
@@ -68,8 +84,8 @@ class CapturesController < ApplicationController
     redirect_to @capture
   end
 
-  # PUT /photos/1
-  # PUT /photos/1.json
+  # PUT /captures/1
+  # PUT /captures/1.json
   def update
     @photo = Photo.find(params[:id])
 
@@ -84,8 +100,8 @@ class CapturesController < ApplicationController
     end
   end
 
-  # DELETE /photos/1
-  # DELETE /photos/1.json
+  # DELETE /captures/1
+  # DELETE /captures/1.json
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
@@ -95,4 +111,12 @@ class CapturesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def upload_path # is used in upload and create
+    file_name = session[:session_id].to_s + '.jpg'
+    File.join(Rails.root, 'public', 'uploads', file_name)
+  end
+
 end

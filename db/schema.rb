@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130116185942) do
+ActiveRecord::Schema.define(:version => 20130116201754) do
 
   create_table "attachments", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -29,11 +29,6 @@ ActiveRecord::Schema.define(:version => 20130116185942) do
   end
 
   create_table "facebooks", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "google_plus", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
