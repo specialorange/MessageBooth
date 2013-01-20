@@ -1,3 +1,5 @@
+<% content_for :title, @product ? @product.name : "Which Message would you like to Capture?" %>
+
 <div id="main" role="main">
   <div class="container-fluid">
     <div class="row-fluid">
@@ -12,7 +14,7 @@
 
         <div data-pjax-container>
           <!-- <div class="row" id="message-container"> -->
-            <%= render :partial => 'photos/capture' %>
+            <%= yield :mc %>
           <!-- </div> -->
         </div>
 

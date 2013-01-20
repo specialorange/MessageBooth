@@ -1,7 +1,7 @@
 <p class="headering">Recent</p>
 <ul class="nav nav-list">
   <li class="nav-header">Photo</li>
-    <div><%= @lastPhoto %></div>
+    <div><%= image_tag(@lastPhoto.image.url(:medium)) %></div>
   <li class="nav-header">PhotoBooth</li>
     <div><%= @lastPhotoBooth %></div>
   <li class="nav-header">Video</li>

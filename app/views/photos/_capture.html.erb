@@ -1,3 +1,5 @@
+<% content_for :title, @product ? @product.name : "Capture Photos" %>
+<%= content_for :mc do %>
   <div id="webcam">
   </div>
 
@@ -40,16 +42,13 @@
     webcam.set_shutter_sound(true, '/shutter.mp3');
     webcam.set_hook('onLoad', 'onload_complete');
     webcam.set_hook('onComplete', 'upload_complete');
-    var width = $(window).width();
-    width = $('#webcam').width();
+    var width = $('#webcam').width();
     // $('#webcam').html(webcam.get_html(640, 480));
-    // $('#webcam').html(webcam.get_html((width*.5), ((width*.5)*3/4)));
     $('#webcam').html(webcam.get_html((width), ((width)*3/4)));
   </script>
 
   <%= form_for Photo.new, :html => {:style => "display: none;"} do |f| %>
     <div class="grey span2">
-      <!-- <input type="hidden" name="fileName" id="calculatedFileName"> -->
       <p>
         <%= f.label :description %><br/>
         <%= f.text_field :description %>
@@ -62,3 +61,4 @@
       </p>
     </div>
   <% end %>
+<% end %>

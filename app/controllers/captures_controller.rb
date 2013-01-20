@@ -1,18 +1,15 @@
 class CapturesController < ApplicationController
 
-
-  def index
-    @photos = Photo.all
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @photos }
-    end
-  end
-
   def photos
+    @lastPhoto = Photo.last
+    logger.debug 'hereereere'
     render 'index'
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.json { render json: @lastPhoto }
+    # end
   end
+
   def photo_booths
     render 'index'
   end
@@ -37,6 +34,16 @@ class CapturesController < ApplicationController
   def image_urls
     render 'index'
   end
+
+  def index
+    @photos = Photo.all
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @photos }
+    end
+  end
+
 
   # get captures
   def upload
@@ -81,7 +88,7 @@ class CapturesController < ApplicationController
     @photo.image = File.new(upload_path)
     @photo.save
 
-    redirect_to @capture
+    redirect_to 'captures/photos'
   end
 
   # PUT /captures/1
