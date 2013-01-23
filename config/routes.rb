@@ -1,14 +1,41 @@
 MessageBooth::Application.routes.draw do
 
-  match 'captures/photos' => 'captures#photos'
-  match 'captures/photo_booths' => 'captures#photo_booths'
-  match 'captures/videos' => 'captures#videos'
-  match 'captures/audios' => 'captures#audios'
-  match 'captures/letters' => 'captures#letters'
-  match 'captures/urls' => 'captures#urls'
-  match 'captures/attachments' => 'captures#attachments'
-  match 'captures/rsses' => 'captures#rsses'
-  match 'captures/image_urls' => 'captures#image_urls'
+  namespace :captures do
+    resources :photos
+    resources :photo_booths
+    resources :videos
+    resources :audios
+    resources :letters
+    resources :urls
+    resources :attachments
+    resources :rsses
+    resources :image_urls
+  end
+
+  namespace :displays do
+    resources :photos
+    resources :photo_booths
+    resources :videos
+    resources :audios
+    resources :letters
+    resources :urls
+    resources :attachments
+    resources :rsses
+    resources :image_urls
+  end
+  
+  resources :captures
+
+  # match 'captures/photos' => 'captures#photos'
+
+  # match 'captures/photo_booths' => 'captures#photo_booths'
+  # match 'captures/videos' => 'captures#videos'
+  # match 'captures/audios' => 'captures#audios'
+  # match 'captures/letters' => 'captures#letters'
+  # match 'captures/urls' => 'captures#urls'
+  # match 'captures/attachments' => 'captures#attachments'
+  # match 'captures/rsses' => 'captures#rsses'
+  # match 'captures/image_urls' => 'captures#image_urls'
 
   resources :google_ps
 
@@ -36,7 +63,6 @@ MessageBooth::Application.routes.draw do
 
   resources :displays
 
-  resources :captures
 
   resources :photos, :only => [:index, :show, :new, :create, :edit] do
     post 'upload', :on => :collection

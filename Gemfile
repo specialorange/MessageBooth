@@ -35,13 +35,16 @@ gem 'color_routes'
 gem 'font-awesome-rails'
 gem 'thin'
 gem 'rack-pjax'
+gem 'seedbank'
+gem 'aws-s3'
+gem 'aws-sdk'
 
 group :development, :test do
-    gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :production do
-    gem 'pg'
+  gem 'pg'
 end
 
 # To use ActiveModel has_secure_password

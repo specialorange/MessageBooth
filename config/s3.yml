@@ -1,0 +1,12 @@
+development:
+  bucket: MessageBoothDev
+  access_key_id: AKIAJSXSFBFYT5TXRZFA
+  secret_access_key: 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
+test:
+  bucket: MessageBoothTest
+  access_key_id: AKIAJSXSFBFYT5TXRZFA
+  secret_access_key: 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
+production:
+  bucket: MessageBoothProd
+  access_key_id: AKIAJSXSFBFYT5TXRZFA
+  secret_access_key: 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
